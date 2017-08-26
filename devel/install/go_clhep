@@ -36,7 +36,7 @@ echo
 
 
 if($1 == "src"|| $1 == "make" || $1 == "fixconfig") goto $1
-
+	
 # Source Build
 src:
 	# Getting source file
@@ -49,10 +49,9 @@ src:
 	rm -rf build  ; mkdir build
 	rm -rf source ; mkdir source
 	cd source
-	rm -f          $filename
-	wget     $repo/$filename
-	echo Unpacking $filename
-	tar -zxpvf     $filename >& /dev/null
+	wget $repo/$filename
+	echo Unpacking $download/$filename
+	tar -zxpf     $download/$filename >& /dev/null
 if($1 == "src") exit
 
 # make

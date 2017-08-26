@@ -68,11 +68,10 @@ src:
 	# Unzipping source
 	cd $ROOTROOT
 
-	rm -f          $filename
 	wget     $repo/$filename
 
 	echo Unpacking $filename
-	tar -zxpvf     $filename >& /dev/null
+	tar -zxpvf     $download/$filename >& /dev/null
 
 if($1 == "src") exit
 

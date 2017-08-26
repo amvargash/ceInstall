@@ -22,7 +22,6 @@ set ooarch = $oarch" OPT=1"
 echo " > Special Compilation Options: " $ooarch 
 echo
 
-
 # Build
 # Getting source file
 echo " > Installing banks - release "$release". Getting source package from repository..."
@@ -30,10 +29,9 @@ rm -rf   $JLAB_SOFTWARE/banks/$BANKS_VERSION
 mkdir -p $JLAB_SOFTWARE/banks
 cd       $JLAB_SOFTWARE/banks
 
-rm             $filename
 wget     $repo/$filename
 echo Unpacking $filename
-tar -zxpvf     $filename >& /dev/null
+tar -zxpvf    $download/$filename >& /dev/null
 
 
 # Compiling

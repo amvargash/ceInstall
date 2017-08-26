@@ -25,7 +25,6 @@ endif
 echo
 echo $system detected. Downloading $filename
 
-rm $filename
 wget $repo/$filename
 chmod u+x $filename
 
@@ -33,9 +32,9 @@ echo
 echo Please execute:
 echo
      if($system == "Mac") then
-	echo open $filename
+	echo open $download/$filename
 else if($system == "Linux") then
-	echo ./$filename
+	echo ./$download/$filename
 endif
 echo
 echo Then follow the installation instructions. You can skip the creation of a qt account.

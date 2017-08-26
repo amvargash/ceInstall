@@ -7,7 +7,11 @@ endif
 
 # Additional environment
 env:
-	alias wget "wget --no-check-certificate"
+	set download = `pwd`/downloads
+	if (! -d $download ) then
+		mkdir $download
+	endif
+	alias wget "wget --directory-prefix=$download -N --no-check-certificate"
 if($1 == "env") exit
 
 

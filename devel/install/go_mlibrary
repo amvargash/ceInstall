@@ -30,10 +30,9 @@ rm -rf   $JLAB_SOFTWARE/mlibrary/$MLIBRARY_VERSION
 mkdir -p $JLAB_SOFTWARE/mlibrary
 cd       $JLAB_SOFTWARE/mlibrary
 
-rm             $filename
 wget     $repo/$filename
 echo Unpacking $filename
-tar -zxpvf     $filename >& /dev/null
+tar -zxpvf     $download/$filename >& /dev/null
 
 # Compiling
 
