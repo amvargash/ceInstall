@@ -25,6 +25,7 @@ endif
 echo
 echo $system detected. Downloading $filename
 
+rm $filename
 wget $repo/$filename
 chmod u+x $filename
 

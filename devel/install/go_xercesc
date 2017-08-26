@@ -32,14 +32,15 @@ if($1 == "src"|| $1 == "make") goto $1
 src:
 	# Getting source file
 	echo " > Installing xerces version "$version" - release "$release". Getting and unpacking" $filename"..."
+	rm -rf   $XERCESCROOT
 	mkdir -p $XERCESCROOT
 
 	# Unpacking file. For XERCES, we need source dir different than destination dir
 	cd $XERCESCROOT
-
+	rm -f          $filename
 	wget     $repo/$filename
 	echo Unpacking $filename
-	tar --overwrite -zxpvf     $filename >& /dev/null
+	tar -zxpvf     $filename >& /dev/null
 if($1 == "src") exit
 
 # make
@@ -64,7 +65,7 @@ if($1 == "make") exit
 
 # Cleaning up
 cd $XERCESCROOT
-rm -rf $version
+rm -rf $version $filename
 
 # Done!
 echo done
